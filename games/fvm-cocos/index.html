@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <title>Cocos Creator | MSH5</title>
+
+  <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1,viewport-fit=cover"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="full-screen" content="yes"/>
+  <meta name="screen-orientation" content="landscape"/>
+  <meta name="x5-fullscreen" content="true"/>
+  <meta name="360-fullscreen" content="true"/>
+  
+  <meta name="renderer" content="webkit"/>
+  <meta name="force-rendering" content="webkit"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  
+  <link rel="stylesheet" type="text/css" href="style-desktop.ec961.css"/>
+<style>
+/* FvM Hub mobile/embed compatibility patch */
+html, body {
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  background: #000 !important;
+  overscroll-behavior: none;
+  touch-action: none;
+}
+body { position: fixed !important; inset: 0 !important; display: block !important; }
+#GameDiv, #Cocos2dGameContainer {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  max-height: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  overflow: hidden !important;
+  background: #000 !important;
+}
+#GameCanvas, canvas {
+  display: block !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  touch-action: none !important;
+  -webkit-user-select: none !important;
+  user-select: none !important;
+}
+#splash { z-index: 9999; }
+.progress-bar { max-width: calc(100vw - 48px); }
+@media (orientation: portrait) {
+  #GameDiv, #Cocos2dGameContainer { width: 100% !important; height: 100% !important; }
+}
+</style>
+<script>window.__FVM_IN_IFRAME__ = (window.self !== window.top);</script>
+</head>
+<body>
+<div id="GameDiv">
+  <canvas id="GameCanvas" oncontextmenu="event.preventDefault()" tabindex="0"></canvas>
+  <div id="splash">
+    <div class="progress-bar stripes">
+      <span style="width: 0%"></span>
+    </div>
+  </div>
+</div>
+
+<script src="src/settings.cc17f.js" charset="utf-8"></script>
+<script src="main.25ead.js" charset="utf-8"></script>
+
+<script>
+(function () {
+  function fitCocos() {
+    try {
+      if (window.cc && cc.view) {
+        cc.view.resizeWithBrowserSize(true);
+        if (cc.view.setFrameSize) cc.view.setFrameSize(window.innerWidth, window.innerHeight);
+      }
+    } catch (_) {}
+  }
+  window.addEventListener('resize', fitCocos, { passive: true });
+  window.addEventListener('orientationchange', function () { setTimeout(fitCocos, 120); }, { passive: true });
+  if (window.visualViewport) window.visualViewport.addEventListener('resize', fitCocos, { passive: true });
+  setTimeout(fitCocos, 250);
+  setTimeout(fitCocos, 1000);
+})();
+</script>
+
+</body>
+</html>
