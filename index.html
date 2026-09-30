@@ -87,7 +87,7 @@
     h2{margin:9px 0 5px;font-size:clamp(1.75rem,4vw,2.55rem);letter-spacing:-.04em;color:#06457f;text-shadow:0 1px white}
     .section-head p{margin:0;max-width:760px;color:var(--muted);line-height:1.55;font-weight:600}
 
-    .download-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+    .download-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
     .download-card,.soon-card{overflow:hidden;border-radius:var(--radius);background:linear-gradient(180deg,#fff,#e9f8ff);border:1px solid #8fd4f6;box-shadow:var(--shadow),inset 0 1px white;position:relative}
     .download-card::after,.soon-card::after{content:"";position:absolute;inset:0;pointer-events:none;border-radius:inherit;box-shadow:inset 0 0 0 1px rgba(255,255,255,.6)}
     .cover-wrap{position:relative;aspect-ratio:16/9;overflow:hidden;background:#034a88;border-bottom:1px solid #68bfe9}
@@ -198,7 +198,6 @@
           <a href="#downloads" data-i18n="navDownloads">Downloads</a>
           <a href="#fangames" data-i18n="navFangames">Fangames</a>
           <a href="#play" data-i18n="navPlay">Play Online</a>
-          <a href="#coming" data-i18n="navSoon">Coming Soon</a>
         </nav>
         <div class="lang-switch" aria-label="Language">
           <button class="lang-btn active" type="button" data-lang="en">EN</button>
@@ -241,7 +240,7 @@
             <div class="card-body">
               <h3 data-i18n="fvm1Title">FvM1: Welfare Edition</h3>
               <p data-i18n="fvm1Desc">A downloadable revival edition of the original Food vs. Mouse.</p>
-              <a class="btn btn-primary download-link" href="https://mega.nz/file/WoBT1BwT#PHEMo4edq4iDYDmc_7BXikox5wR7QC1NyEKU8XSIj-k" target="_blank" rel="noopener noreferrer"><span data-i18n="downloadFvm1">↓ Download Welfare Edition</span></a>
+              <a class="btn btn-primary download-link" href="https://mega.nz/file/HwYnRbgD#_vCxFvlgbOraaWll0jR8zfHWa1D-69TmHT9mls29fYI" target="_blank" rel="noopener noreferrer"><span data-i18n="downloadFvm1">↓ Download Welfare Edition</span></a>
               <div class="provider-note"><span class="provider-switch">MEGA</span> <span data-i18n="providerSuffix">download</span></div>
             </div>
           </article>
@@ -255,6 +254,19 @@
               <h3 data-i18n="fvm2Title">FvM2: Overbaked Edition</h3>
               <p data-i18n="fvm2Desc">The Overbaked Edition revival of Food vs. Mouse 2.</p>
               <a class="btn btn-primary download-link" href="https://mega.nz/file/ulBiWIrS#OGz9apI1R24gfsbhQtT1m1AEclZF-AhLasQAQlglMgQ" target="_blank" rel="noopener noreferrer"><span data-i18n="downloadFvm2">↓ Download Overbaked Edition</span></a>
+              <div class="provider-note"><span class="provider-switch">MEGA</span> <span data-i18n="providerSuffix">download</span></div>
+            </div>
+          </article>
+
+          <article class="download-card">
+            <div class="cover-wrap">
+              <img src="assets/competition-edition.jpg" alt="Food vs. Mouse Competition Edition artwork">
+              <span class="badge" data-i18n="competitionBadge">Competition Edition</span>
+            </div>
+            <div class="card-body">
+              <h3 data-i18n="competitionTitle">Food vs. Mouse: Competition Edition</h3>
+              <p data-i18n="competitionDesc">Competition Edition is now available from the main catalog.</p>
+              <a class="btn btn-primary download-link" href="https://mega.nz/file/mghTRTLb#rmX18pb9H_oyO4yZK7aVXyDJyeG4j8VXCZl9J6hshnc" target="_blank" rel="noopener noreferrer"><span data-i18n="downloadCompetition">↓ Download Competition Edition</span></a>
               <div class="provider-note"><span class="provider-switch">MEGA</span> <span data-i18n="providerSuffix">download</span></div>
             </div>
           </article>
@@ -355,31 +367,9 @@
             </div>
             <iframe id="gameFrame" title="Food vs. Mouse Cocos player" allow="autoplay *; fullscreen *; gamepad *" allowfullscreen webkitallowfullscreen loading="eager"></iframe>
           </div>
-      </section>
-
-      <section class="section" id="coming">
-        <div class="section-head">
-          <div class="section-title-wrap">
-            <div class="section-kicker" data-i18n="soonKicker">Coming Soon</div>
-            <h2 data-i18n="soonTitle">Future editions</h2>
-            <p data-i18n="soonText">Projects that belong on the hub but are not ready to download yet.</p>
-          </div>
-        </div>
-
-        <div class="coming-wrap">
-          <article class="soon-card">
-            <div class="cover-wrap">
-              <img src="assets/competition-edition.png" alt="Food vs. Mouse Competition Edition placeholder artwork">
-              <span class="badge soon" data-i18n="soonBadge">Coming Soon</span>
-            </div>
-            <div class="card-body">
-              <h3 data-i18n="competitionTitle">Food vs. Mouse: Competition Edition</h3>
-              <p data-i18n="competitionDesc">A future edition reserved for the hub.</p>
-              <button class="btn btn-disabled" type="button" disabled data-i18n="notAvailable">⏳ Not Available Yet</button>
-            </div>
-          </article>
         </div>
       </section>
+
     </div>
   </main>
 
@@ -389,28 +379,26 @@
     (() => {
       const copy = {
         en: {
-          brand:'Food vs. Mouse Hub', navDownloads:'Downloads', navFangames:'Fangames', navPlay:'Play Online', navSoon:'Coming Soon',
+          brand:'Food vs. Mouse Hub', navDownloads:'Downloads', navFangames:'Fangames', navPlay:'Play Online',
           eyebrow:'🍰 Fan archive & revival hub', heroTitle:'Food vs. Mouse Hub', heroText:'Downloads, revivals, browser builds, and future Food vs. Mouse projects in one shiny little corner of the web.', browse:'↓ Browse Downloads', playCocos:'▶ Play Cocos Editions',
-          downloadsKicker:'Downloads', downloadsTitle:'Revival editions', downloadsText:'Pick an edition below. The same download links are used in both language modes.',
+          downloadsKicker:'Downloads', downloadsTitle:'Main catalog', downloadsText:'Pick an edition below. The same download links are used in both language modes.',
           fvm1Badge:'FvM 1 Revival', fvm1Title:'FvM1: Welfare Edition', fvm1Desc:'A downloadable revival edition of the original Food vs. Mouse.', downloadFvm1:'↓ Download Welfare Edition',
-          fvm2Badge:'FvM 2 Revival', fvm2Title:'FvM2: Overbaked Edition', fvm2Desc:'The Overbaked Edition revival of Food vs. Mouse 2.', downloadFvm2:'↓ Download Overbaked Edition', providerSuffix:'download',
+          fvm2Badge:'FvM 2 Revival', fvm2Title:'FvM2: Overbaked Edition', fvm2Desc:'The Overbaked Edition revival of Food vs. Mouse 2.', downloadFvm2:'↓ Download Overbaked Edition', competitionBadge:'Competition Edition', competitionTitle:'Food vs. Mouse: Competition Edition', competitionDesc:'Competition Edition is now available from the main catalog.', downloadCompetition:'↓ Download Competition Edition', providerSuffix:'download',
           fangamesKicker:'Fangames', fangamesTitle:'Community-made Food vs. Mouse games', fangamesText:'Fan projects and recreations collected in one place. Every card uses the supplied Food vs. Mouse artwork.', fangamesCnTitle:'Chinese-mode fangame links', fangamesCnNotice:'Chinese links may be found on Bilibili.', fangameBadge:'Fangame', communityProject:'Community project', liteDesc:'By far the most accurate Food vs. Mouse fangame that has been released.', rebornDesc:'It tries to be good, but it is kind of shoddy, plays about the same as the fangame above.', evolveDesc:'The first Food vs. Mouse fangame; so far, it has the least fidelity to the original game.', warriorDesc:'Non-mirror link supplied for Food vs Mouse Warrior.', openLite:'↓ Open FvM Lite', openReborn:'↗ Open FvM Reborn', openEvolve:'↓ Download FvM Evolve', openWarrior:'↗ Open Food vs Mouse Warrior',
           themeWinter:'❄ Winter theme', themeSpring:'🌸 Spring theme', themeSummer:'☀ Summer theme', themeFall:'🍂 Fall theme', themeHalloween:'🎃 Halloween theme', themeXmas:'🎄 Christmas theme',
           playKicker:'Play Online', playTitle:'Cocos browser editions', playText:'Choose a build and launch it in the embedded player.', tabCocos:'FvM Cocos', tabUnderwater:'FvM Cocos: Underwater Edition', startGame:'▶ Start Game', playerNote:'For local use, open the hub through a small HTTP server instead of double-clicking index.html. The included server launchers handle this for you.',
-          soonKicker:'Coming Soon', soonTitle:'Future editions', soonText:'Projects that belong on the hub but are not ready to download yet.', soonBadge:'Coming Soon', competitionTitle:'Food vs. Mouse: Competition Edition', competitionDesc:'A future edition reserved for the hub. Artwork and download information are placeholders for now.', notAvailable:'⏳ Not Available Yet',
-          includedTitle:'What’s included', includedText:'The package contains the hub, revival images, both Cocos builds, the Competition Edition placeholder art, the supplied fangame card image, and all listed fangame links.', hostingTitle:'Hosting notes', host1:'Upload the entire folder.', host2:'Keep assets and games beside index.html.', host3:'Static hosts such as GitHub Pages should work.', footer:'Fan-made Food vs. Mouse archive/revival hub. Food vs. Mouse belongs to its respective rights holders.'
+          includedTitle:'What’s included', includedText:'The package contains the hub, all three main catalog entries, both Cocos builds, the Competition Edition card art, the supplied fangame card image, and all listed fangame links.', hostingTitle:'Hosting notes', host1:'Upload the entire folder.', host2:'Keep assets and games beside index.html.', host3:'Static hosts such as GitHub Pages should work.', footer:'Fan-made Food vs. Mouse archive/revival hub. Food vs. Mouse belongs to its respective rights holders.'
         },
         zh: {
-          brand:'美食大战老鼠资源站', navDownloads:'下载', navFangames:'同人游戏', navPlay:'在线游玩', navSoon:'即将推出',
+          brand:'美食大战老鼠资源站', navDownloads:'下载', navFangames:'同人游戏', navPlay:'在线游玩',
           eyebrow:'🍰 美食大战老鼠 · 民间资源与复活计划', heroTitle:'美食大战老鼠资源站', heroText:'把下载版、复活版、浏览器版和未来项目集中到一个蓝色亮晶晶的小站里。', browse:'↓ 浏览下载', playCocos:'▶ 游玩 Cocos 版本',
-          downloadsKicker:'下载', downloadsTitle:'复活版本', downloadsText:'选择下面的版本。中英文模式使用相同的下载链接。',
+          downloadsKicker:'下载', downloadsTitle:'主要目录', downloadsText:'选择下面的版本。中英文模式使用相同的下载链接。',
           fvm1Badge:'FvM 1 复活版', fvm1Title:'FvM1：Welfare Edition', fvm1Desc:'以初代《美食大战老鼠》为基础的可下载复活版本。', downloadFvm1:'↓ 下载 Welfare Edition',
-          fvm2Badge:'FvM 2 复活版', fvm2Title:'FvM2：Overbaked Edition', fvm2Desc:'《美食大战老鼠 2》的 Overbaked Edition 复活版本。', downloadFvm2:'↓ 下载 Overbaked Edition', providerSuffix:'下载',
+          fvm2Badge:'FvM 2 复活版', fvm2Title:'FvM2：Overbaked Edition', fvm2Desc:'《美食大战老鼠 2》的 Overbaked Edition 复活版本。', downloadFvm2:'↓ 下载 Overbaked Edition', competitionBadge:'竞技版', competitionTitle:'美食大战老鼠：Competition Edition / 竞技版', competitionDesc:'Competition Edition 现已加入主要下载目录。', downloadCompetition:'↓ 下载 Competition Edition', providerSuffix:'下载',
           fangamesKicker:'同人游戏', fangamesTitle:'玩家制作的美食大战老鼠游戏', fangamesText:'中文模式下不显示本站收录的海外同人游戏下载列表。', fangamesCnTitle:'中文模式同人游戏链接', fangamesCnNotice:'中文链接可以在哔哩哔哩（Bilibili）上找到。 Chinese links may be found on Bilibili.', fangameBadge:'同人游戏', communityProject:'玩家项目', liteDesc:'目前已经发布的同人作品中，FvM Lite 对原版《美食大战老鼠》的还原度最高。', rebornDesc:'目标不错，但完成度比较粗糙，玩法与上面的 FvM Lite 大致相似。', evolveDesc:'目前最早的《美食大战老鼠》同人游戏，但对原版的还原度也是最低的。', warriorDesc:'Food vs Mouse Warrior 的非镜像链接。', openLite:'↓ 打开 FvM Lite', openReborn:'↗ 打开 FvM Reborn', openEvolve:'↓ 下载 FvM Evolve', openWarrior:'↗ 打开 Food vs Mouse Warrior',
           themeWinter:'❄ 冬季主题', themeSpring:'🌸 春季主题', themeSummer:'☀ 夏季主题', themeFall:'🍂 秋季主题', themeHalloween:'🎃 万圣节主题', themeXmas:'🎄 圣诞节主题',
           playKicker:'在线游玩', playTitle:'Cocos 浏览器版本', playText:'选择版本后直接在网页播放器里启动。之前加入的手机 iframe 修复仍然保留。', tabCocos:'FvM Cocos', tabUnderwater:'FvM Cocos：水下版', startGame:'▶ 开始游戏', playerNote:'本地运行时请通过 HTTP 小型服务器打开本站，不要直接双击 index.html。压缩包中已保留服务器启动脚本。',
-          soonKicker:'即将推出', soonTitle:'未来版本', soonText:'这些项目会出现在资源站里，但目前还没有正式下载。', soonBadge:'即将推出', competitionTitle:'美食大战老鼠：Competition Edition / 竞技版', competitionDesc:'未来计划中的版本。目前封面和下载信息均为占位内容。', notAvailable:'⏳ 暂未开放下载',
-          includedTitle:'包含内容', includedText:'压缩包包含资源站页面、复活版图片、两个 Cocos 游戏版本、Competition Edition 占位封面、你提供的同人游戏卡片图片，以及英文模式中的同人游戏链接。', hostingTitle:'部署提示', host1:'上传整个文件夹，不要只上传 HTML。', host2:'assets 和 games 文件夹要与 index.html 保持相对位置。', host3:'GitHub Pages 等静态网站托管通常可以直接使用。', footer:'美食大战老鼠民间资源／复活计划站点。原作版权归其相关权利方所有。'
+          includedTitle:'包含内容', includedText:'压缩包包含资源站页面、三个主要目录版本、两个 Cocos 游戏版本、Competition Edition 卡片图片、你提供的同人游戏卡片图片，以及英文模式中的同人游戏链接。', hostingTitle:'部署提示', host1:'上传整个文件夹，不要只上传 HTML。', host2:'assets 和 games 文件夹要与 index.html 保持相对位置。', host3:'GitHub Pages 等静态网站托管通常可以直接使用。', footer:'美食大战老鼠民间资源／复活计划站点。原作版权归其相关权利方所有。'
         }
       };
 
